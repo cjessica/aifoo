@@ -19,7 +19,7 @@ import com.google.appinventor.components.common.YaVersion;
 
 @SimpleObject
 public class LoggerComponent extends AndroidNonvisibleComponent
-    implements OnPauseListener {
+    implements OnPauseListener, OnResumeListener {
   // Constants
   private static final String LOG_TAG = "LoggerComponent";
 
@@ -36,6 +36,8 @@ public class LoggerComponent extends AndroidNonvisibleComponent
 
     // Register for onPause() event.
     form.registerForOnPause(this);
+    // Register for onResume() event.
+    form.registerForOnResume(this);
 
     // Set default property values.
     Enabled(true);

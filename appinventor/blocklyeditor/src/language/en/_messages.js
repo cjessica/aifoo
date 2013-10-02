@@ -612,9 +612,30 @@ Blockly.LANG_LISTS_POSITION_IN_TOOLTIP = 'Find the position of the thing in the 
   + 'the list, return 0.';
 
 Blockly.LANG_LISTS_PICK_RANDOM_ITEM_HELPURL = 'http://appinventor.mit.edu/explore/ai2/support/blocks/lists#pickrandomitem';
-Blockly.LANG_LISTS_PICK_RANDOM_TITLE_PICK_RANDOM = 'pick a random item';
+//Blockly.LANG_LISTS_PICK_RANDOM_TITLE_PICK_RANDOM = 'pick random item';
+//Blockly.LANG_LISTS_PICK_RANDOM_TITLE_PICK_FIRST = 'pick first item';
+//Blockly.LANG_LISTS_PICK_RANDOM_TITLE_PICK_LAST = 'pick last item';
 Blockly.LANG_LISTS_PICK_RANDOM_ITEM_INPUT_LIST = 'list';
-Blockly.LANG_LISTS_PICK_RANDOM_TOOLTIP = 'Pick an item at random from the list.';
+Blockly.LANG_LISTS_PICK_RANDOM_TOOLTIP = 'Pick an item from the list.';
+
+Blockly.LANG_LISTS_PICK_AN_ITEM_PICK = "pick";
+Blockly.LANG_LISTS_PICK_AN_ITEM_FIRST = 'first';
+Blockly.LANG_LISTS_PICK_AN_ITEM_LAST = 'last';
+Blockly.LANG_LISTS_PICK_AN_ITEM_RANDOM = 'random';
+Blockly.LANG_LISTS_PICK_AN_ITEM_ITEM = 'item';
+
+/*
+Blockly.LANG_MATH_CONVERT_ANGLES_TITLE_CONVERT = 'convert';
+Blockly.LANG_MATH_CONVERT_ANGLES_OP_RAD_TO_DEG = 'radians to degrees';
+Blockly.LANG_MATH_CONVERT_ANGLES_OP_DEG_TO_RAD = 'degrees to radians';
+Blockly.LANG_MATH_CONVERT_ANGLES_TOOLTIP_RAD_TO_DEG = 'Returns the degree value in the range\n' +
+  '[0, 360) corresponding to its radians argument.';
+Blockly.LANG_MATH_CONVERT_ANGLES_HELPURL_RAD_TO_DEG = 'http://appinventor.mit.edu/explore/ai2/support/blocks/math#convertrad';
+Blockly.LANG_MATH_CONVERT_ANGLES_TOOLTIP_DEG_TO_RAD = 'Returns the radian value in the range\n' +
+  '[-\u03C0, +\u03C0) corresponding to its degrees argument.';
+Blockly.LANG_MATH_CONVERT_ANGLES_HELPURL_DEG_TO_RAD = 'http://appinventor.mit.edu/explore/ai2/support/blocks/math#convertdeg';
+*/
+
 
 Blockly.LANG_LISTS_REPLACE_ITEM_HELPURL = 'http://appinventor.mit.edu/explore/ai2/support/blocks/lists#replace';
 Blockly.LANG_LISTS_REPLACE_ITEM_TITLE_REPLACE = 'replace list item';

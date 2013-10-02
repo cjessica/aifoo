@@ -1848,6 +1848,22 @@ list, use the make-yail-list constructor with no arguments.
        "Invalid list operation"))
   (yail-list-get-item yail-list
               (random-integer 1  (yail-list-length yail-list))))
+;; Returns first element from the list
+(define (yail-list-pick-first yail-list)
+  (if (yail-list-empty? yail-list)
+      (signal-runtime-error
+       (format #f "Pick first item: Attempt to pick first element from an empty list")
+       "Invalid list operation"))
+  (yail-list-get-item yail-list
+              (1)))
+;; Returns last element from the list
+(define (yail-list-pick-last yail-list)
+  (if (yail-list-empty? yail-list)
+      (signal-runtime-error
+       (format #f "Pick last item: Attempt to pick last element from an empty list")
+       "Invalid list operation"))
+  (yail-list-get-item yail-list
+              (yail-list-length yail-list)))
 
 
 ;; Implements Blocks foreach, which takes a Yail-list as argument

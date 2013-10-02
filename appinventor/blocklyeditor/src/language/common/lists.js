@@ -181,7 +181,7 @@ Blockly.Language.lists_is_empty = {
   onchange: Blockly.WarningHandler.checkErrors,
   typeblock: [{ translatedName: Blockly.LANG_LISTS_TITLE_IS_EMPTY }]
 };
-
+/*
 Blockly.Language.lists_pick_random_item = {
   // Length of list.
   category : Blockly.LANG_CATEGORY_LISTS,
@@ -196,23 +196,54 @@ Blockly.Language.lists_pick_random_item = {
   onchange: Blockly.WarningHandler.checkErrors,
   typeblock: [{ translatedName: Blockly.LANG_LISTS_PICK_RANDOM_TITLE_PICK_RANDOM }]
 };
+*/
 
-Blockly.Language.lists_position_in = {
-  // Postion of item in list.
+
+Blockly.Language.lists_pick_an_item = {
+  // Length of list.
   category : Blockly.LANG_CATEGORY_LISTS,
-  helpUrl : Blockly.LANG_LISTS_POSITION_IN_HELPURL,
+  helpUrl : Blockly.LANG_LISTS_PICK_AN_ITEM_HELPURL,
   init : function() {
     this.setColour(Blockly.LIST_CATEGORY_HUE);
-    this.setOutput(true, Blockly.Language.YailTypeToBlocklyType("number",Blockly.Language.OUTPUT));
+    this.setOutput(true, null);
+    this.appendValueInput('LIST').setCheck(Blockly.Language.YailTypeToBlocklyType("list",Blockly.Language.INPUT)).appendTitle('pick').appendTitle(new Blockly.FieldDropdown(this.OPERATORS),'OP');
 
-    this.appendValueInput('ITEM').appendTitle('index in list').appendTitle('thing');
-    this.appendValueInput('LIST').setCheck(Blockly.Language.YailTypeToBlocklyType("list",Blockly.Language.INPUT)).appendTitle('list').setAlign(Blockly.ALIGN_RIGHT);
-    Blockly.Language.setTooltip(this, Blockly.LANG_LISTS_POSITION_IN_TOOLTIP);
-    this.appendCollapsedInput().appendTitle('index', 'COLLAPSED_TEXT');
+    Blockly.Language.setTooltip(this, Blockly.LANG_LISTS_PICK_RANDOM_TOOLTIP);
+    this.appendCollapsedInput().appendTitle('pick random', 'COLLAPSED_TEXT');
   },
   onchange: Blockly.WarningHandler.checkErrors,
-  typeblock: [{ translatedName: Blockly.LANG_LISTS_POSITION_IN_TITLE_POSITION }]
+  typeblock: [{
+    translatedName: Blockly.LANG_LISTS_PICK_AN_ITEM_PICK+
+        ' ' + Blockly.LANG_LISTS_PICK_AN_ITEM_FIRST,
+    dropDown: {
+      titleName: 'OP',
+      value: 'FIRST'
+    }
+  },{
+    translatedName: Blockly.LANG_LISTS_PICK_AN_ITEM_PICK+
+        ' ' + Blockly.LANG_LISTS_PICK_AN_ITEM_LAST,
+    dropDown: {
+      titleName: 'OP',
+      value: 'LAST'
+    }
+  },{
+    translatedName: Blockly.LANG_LISTS_PICK_AN_ITEM_PICK+
+        ' ' + Blockly.LANG_LISTS_PICK_AN_ITEM_RANDOM,
+    dropDown: {
+      titleName: 'OP',
+      value: 'RANDOM'
+    }
+  }],
+  prepareCollapsedText: function(){
+    var titleFromOperator = Blockly.FieldDropdown.lookupOperator(this.OPERATORS, this.getTitleValue('OP'));
+    this.getTitle_('COLLAPSED_TEXT').setText(titleFromOperator, 'COLLAPSED_TEXT');
+  }
 };
+
+Blockly.Language.lists_pick_an_item.OPERATORS =
+	  [[ 'first', 'FIRST' ],
+	   [ 'last', 'LAST' ],
+	   [ 'random', 'RANDOM' ]];
 
 
 Blockly.Language.lists_select_item = {
